@@ -1,64 +1,21 @@
 import React, { useState, useRef, useEffect } from "react";
+import {
+  Box,
+  VStack,
+  HStack,
+  Input,
+  IconButton,
+  Text,
+  Avatar,
+  useColorModeValue,
+  Container,
+  Flex
+} from '@chakra-ui/react';
+import { ArrowForwardIcon } from '@chakra-ui/icons';
 import axios from "axios";
-import styled from "styled-components";
-import { motion } from "framer-motion";
+import { ColorModeSwitcher } from "./ColorModeSwitcher";
+import logo from './logo.png'; // Importa a imagem aqui
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
-  justify-content: flex-end;
-`;
-
-const MessageContainer = styled.div`
-  width: 100%;
-  overflow-y: auto;
-  padding: 20px;
-`;
-
-const Message = styled(motion.div)`
-  max-width: 70%;
-  margin: 10px;
-  padding: 15px;
-  border-radius: 20px;
-  word-wrap: break-word;
-  display: inline-block;
-`;
-
-const UserMessage = styled(Message)`
-  background-color: #4caf50; /* Cor de fundo para as mensagens do usuário */
-  align-self: flex-end; /* Alinha as mensagens do usuário à direita */
-`;
-
-const AiMessage = styled(Message)`
-  background-color: #2196f3; /* Cor de fundo para as mensagens do AI */
-  align-self: flex-start; /* Alinha as mensagens do AI à esquerda */
-`;
-
-const Form = styled.form`
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  margin-top: 20px;
-`;
-
-const Input = styled.input`
-  flex: 1;
-  padding: 10px;
-  border-radius: 20px;
-  border: 1px solid #ccc;
-`;
-
-const Button = styled.button`
-  padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
-  background-color: #2196f3;
-  color: white;
-  margin-left: 10px;
-  cursor: pointer;
-`;
 
 const App = () => {
   const [messages, setMessages] = useState([]);
@@ -81,7 +38,6 @@ const App = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const promptText = inputText.trim();
-
     if (promptText) {
       const data = {
         model: "gpt-3.5-turbo",
@@ -91,23 +47,11 @@ const App = () => {
       try {
         const result = await client.post(
           "https://api.openai.com/v1/chat/completions",
-          JSON.stringify(data),
-          {
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${process.env.REACT_APP_CHATGPT_KEY}`,
-            },
-          }
+          data
         );
 
         const response = result.data.choices[0].message.content;
-
-        setMessages([
-          ...messages,
-          { role: "user", content: promptText },
-          { role: "ai", content: response },
-        ]);
-
+        setMessages([...messages, { role: "user", content: promptText }, { role: "ai", content: response }]);
         setInputText("");
       } catch (error) {
         console.error(error.response ? error.response.data : error);
@@ -116,28 +60,48 @@ const App = () => {
   };
 
   return (
-    <Container>
-      <MessageContainer>
-        {messages.map((message, index) => {
-          const MessageComponent =
-            message.role === "user" ? UserMessage : AiMessage;
-          return (
-            <MessageComponent key={index} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-              {message.content}
-            </MessageComponent>
-          );
-        })}
+    <Container maxW="container.xl">
+      <ColorModeSwitcher />
+      <VStack
+        divider={<Box borderColor="gray.200" />}
+        spacing={4}
+        align="stretch"
+        w="100%"
+        h="95vh"
+        p={5}
+        bg={useColorModeValue('gray.50', 'gray.800')}
+        borderRadius="lg"
+        overflowY="auto"
+      >
+        {messages.map((message, index) => (
+          <HStack key={index} alignSelf={message.role === "user" ? "flex-end" : "flex-start"}>
+          <Avatar
+            size="sm"
+            src={message.role === "user" ? "https://avatars.githubusercontent.com/u/126628341?s=80&v=4" : logo} // Caminho atualizado aqui
+            name={message.role === "user" ? "User" : "AI"}
+          />
+          <Text p={3} bg={message.role === "user" ? "blue.500" : "green.500"} color="white" borderRadius="lg">
+            {message.content}
+          </Text>
+        </HStack>
+      ))}
         <div ref={messageEndRef} />
-      </MessageContainer>
-      <Form onSubmit={handleSubmit}>
+      </VStack>
+      <Flex as="form" onSubmit={handleSubmit} w="100%" mt={5}>
         <Input
-          type="text"
+          mr={2}
           value={inputText}
-          onChange={(e) => setInputText(e.target.value)}
+          onChange={(e) => setInputText(e.target.value)} // Corrigido: função agora está fechada corretamente
           placeholder="Type your message..."
+          bg={useColorModeValue('white', 'gray.700')}
         />
-        <Button type="submit">Send</Button>
-      </Form>
+        <IconButton
+          icon={<ArrowForwardIcon />}
+          type="submit"
+          colorScheme="blue"
+          aria-label="Send message"
+        />
+      </Flex>
     </Container>
   );
 };
