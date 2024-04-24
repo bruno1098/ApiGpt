@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# 🤖💬 OpenAI Chat Interface with Feedback
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Descrição
 
-## Available Scripts
+Bem-vindo ao OpenAI Chat Interface, onde o futuro da interação humano-IA se torna realidade! Esta aplicação React integra a poderosa API da OpenAI para oferecer uma experiência de conversação inteligente e dinâmica. Os usuários podem enviar perguntas, comandos e até mesmo bater papo com nossa IA avançada.
 
-In the project directory, you can run:
+![OpenAI Chat Interface Logo](src/logo.png)
 
-### `npm start`
+## Funcionalidades
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Inteligência Artificial Avançada**: 🚀 Nossa IA utiliza as mais recentes tecnologias de processamento de linguagem natural para entender e responder às suas perguntas em tempo real.
+- **Interface de Usuário Moderna e Intuitiva**: 💻 Desenvolvida com Chakra UI, nossa interface oferece uma experiência de usuário elegante e responsiva em todos os dispositivos.
+- **Feedback Instantâneo**: 📝 Após cada interação, você pode fornecer feedback instantâneo sobre a qualidade da resposta da IA, ajudando a melhorar continuamente nosso sistema.
+- **Modo Escuro e Modo Claro**: 🌓 Escolha entre os modos de cor claro e escuro para uma experiência de leitura confortável em qualquer ambiente.
+- **Fácil de Configurar e Usar**: ⚙️ Com instruções claras e simples, você pode começar a interagir com nossa IA em questão de minutos.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tecnologias Utilizadas
 
-### `npm test`
+- React
+- Chakra UI
+- Axios para requisições HTTP
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Setup do Projeto
 
-### `npm run build`
+Comece a conversar com nossa IA em apenas alguns passos simples:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Clone o Repositório**:
+   ```bash
+   git clone URL_DO_REPOSITORIO
+   ```
+2. **Instale as Dependências**:
+   ```bash
+   npm install
+   ```
+3. **Adicione a Chave da API da OpenAI**:
+   Crie um arquivo `.env` na raiz do projeto e adicione a seguinte linha:
+   ```plaintext
+   REACT_APP_CHATGPT_KEY=SUA_CHAVE_DE_API_AQUI
+   ```
+4. **Inicie o Servidor de Desenvolvimento**:
+   ```bash
+   npm start
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Contribuições
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request com sugestões de melhorias ou novas funcionalidades.
