@@ -1,24 +1,24 @@
-# 🤖💬 OpenAI Chat Interface with Feedback
+# 🤖💬 ExperienceIA Chat Interface with Feedback
 
 ## Descrição
 
-Bem-vindo ao OpenAI Chat Interface, onde o futuro da interação humano-IA se torna realidade! Esta aplicação React integra a poderosa API da OpenAI para oferecer uma experiência de conversação inteligente e dinâmica. Os usuários podem enviar perguntas, comandos e até mesmo bater papo com nossa IA avançada.
+Bem-vindo ao ExperienceIA Chat Interface, onde o futuro da interação humano-IA se torna realidade! Esta aplicação React integra a poderosa API da OpenAI para oferecer uma experiência de conversação inteligente e dinâmica. Os usuários podem enviar perguntas, comandos e até mesmo bater papo com nossa IA avançada.
 
 ![OpenAI Chat Interface Logo](src/logo.png)
 
 ## Funcionalidades
 
 - **Inteligência Artificial Avançada**: 🚀 Nossa IA utiliza as mais recentes tecnologias de processamento de linguagem natural para entender e responder às suas perguntas em tempo real.
-- **Interface de Usuário Moderna e Intuitiva**: 💻 Desenvolvida com Chakra UI, nossa interface oferece uma experiência de usuário elegante e responsiva em todos os dispositivos.
+- **Interface de Usuário Moderna e Intuitiva**: 💻 Desenvolvida com [Chakra UI](https://chakra-ui.com/), nossa interface oferece uma experiência de usuário elegante e responsiva em todos os dispositivos.
 - **Feedback Instantâneo**: 📝 Após cada interação, você pode fornecer feedback instantâneo sobre a qualidade da resposta da IA, ajudando a melhorar continuamente nosso sistema.
 - **Modo Escuro e Modo Claro**: 🌓 Escolha entre os modos de cor claro e escuro para uma experiência de leitura confortável em qualquer ambiente.
 - **Fácil de Configurar e Usar**: ⚙️ Com instruções claras e simples, você pode começar a interagir com nossa IA em questão de minutos.
 
 ## Tecnologias Utilizadas
 
-- React
-- Chakra UI
-- Axios para requisições HTTP
+- ![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=white)
+- ![Chakra UI](https://img.shields.io/badge/-Chakra_UI-319795?style=flat-square&logo=chakra-ui&logoColor=white)
+- ![Axios](https://img.shields.io/badge/-Axios-61DAFB?style=flat-square&logo=axios&logoColor=white)
 
 ## Setup do Projeto
 
