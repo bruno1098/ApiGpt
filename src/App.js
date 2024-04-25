@@ -87,7 +87,7 @@ const App = () => {
           <HStack key={index} alignSelf={message.role === "user" ? "flex-end" : "flex-start"}>
             <Avatar
               size="sm"
-              src={message.role === "user" ? "https://avatars.githubusercontent.com/u/126628341?s=80&v=4" : logo}
+              src={message.role === "user" ? "https://avatars.githubusercontent.com/u/115303980?s=48&v=4" : logo}
               name={message.role === "user" ? "User" : "AI"}
             />
             <Text p={3} bg={message.role === "user" ? "blue.500" : "green.500"} color="white" borderRadius="lg">
